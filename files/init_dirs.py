@@ -1,4 +1,4 @@
-from pathlib import Path
+
 
 files_all = {
     'files_dir' : 'files',
