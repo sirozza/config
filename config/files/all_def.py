@@ -1,2 +1,1 @@
-from init_dirs import files_all
-
+form all_def 
