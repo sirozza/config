@@ -2,9 +2,9 @@
 from files.all_def import (
     config,
     files_all,
-    checking_folders_and_files, 
-    init_log, 
-    logger, 
+    checking_folders_and_files,
+    init_log,
+    logger,
     config_read,
     Page,
     run,
@@ -14,26 +14,22 @@ from files.all_def import (
     Column,
     FilledButton,
     ScrollMode,
-    create_config_default
+    create_config_default,
+    TextField,
 )
 
 
 @logger.catch
 def get_settings():
-    config_table.controls.extend(
-        [
-            TextField(label=f"{data}", text_size=20, value=config[files_all.get('config_set')][data]) 
-            for data in config[files_all.get('config_set')]
-        ]
+    config_table.controls.extend([TextField(label=f"{data}", text_size=20, value=config[files_all.get('config_set')][data]) for data in config[files_all.get('config_set')]]
     )
 
 
 @logger.catch
 def save_settings(e):
-    config[files_all.get('config_set')] = {data.label: data.value for data in config_table.controls}
-    write_config(files_all.get('config_file'))
-    e.page.update()
-
+     config[files_all.get('config_set')] = {data.label: data.value for data in config_table.controls}
+     write_config(files_all.get('config_file'))
+     e.page.update()
 
 
 @logger.catch
