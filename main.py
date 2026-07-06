@@ -1,9 +1,8 @@
-from files.all_def import checking_folders
+from files.all_def import checking_folders_and_files, init_log, logger, config_read
 
-# log_p = Path('log')
-# 
-# log_p.mkdir(parents=True, exist_ok=True)
 
 
 if __name__ == "__main__":
-    checking_folders()
+    checking_folders_and_files()
+    init_log()
+    config_read()
