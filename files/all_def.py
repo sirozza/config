@@ -1,4 +1,16 @@
 from files.all_var import files_all, file_config, log_folder, logger, config
+from flet import (
+    Page,
+    Text,
+    TextField,
+    AppView,
+    Container,
+    Column,
+    FilledButton,
+    ScrollMode,
+    run
+)
+
 
 @logger.catch
 def init_log():
