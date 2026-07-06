@@ -11,7 +11,6 @@ files_all = {
 
 log_folder = Path(files_all.get('log_dir'))
 file_config = Path(files_all.get('config_file'))
-
 config = configparser.ConfigParser()
 
 
