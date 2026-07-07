@@ -16,6 +16,7 @@ from files.all_def import (
     ScrollMode,
     create_config_default,
     TextField,
+    write_config,
 )
 
 
@@ -25,11 +26,12 @@ def get_settings():
     )
 
 
+
 @logger.catch
 def save_settings(e):
-     config[files_all.get('config_set')] = {data.label: data.value for data in config_table.controls}
-     write_config(files_all.get('config_file'))
-     e.page.update()
+    config[files_all.get('config_set')] = {data.label: data.value for data in config_table.controls}
+    write_config(files_all.get('config_file'))
+    e.page.update()
 
 
 @logger.catch

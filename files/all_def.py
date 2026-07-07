@@ -25,6 +25,7 @@ def init_log():
         )
 
 
+@logger.catch
 def create_config_default():
     config[files_all.get('config_set')] = {'test_config': '1'}
 
@@ -38,6 +39,11 @@ def checking_folders_and_files():
 @logger.catch
 def config_read():
     config.read(file_config, encoding='utf-8')
+
+
+@logger.catch
+def write_config():
+    pass
 
 
 if __name__ == "__main__":
