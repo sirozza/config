@@ -446,3 +446,255 @@ Traceback (most recent call last):
                  └ {'files_dir': 'files', 'log_dir': 'log', 'config_file': 'config.ini', 'config_set': 'DEFAULT'}
 
 NameError: name 'write_config' is not defined
+22:03:05 08.07.26 ERROR An error has been caught in function 'save_settings', process 'MainProcess' (4145), thread 'MainThread' (140677434578816):
+Traceback (most recent call last):
+
+  File "/home/smn/github/config/main.py", line 61, in <module>
+    run(main, view=AppView.FLET_APP)
+    │   │          │       └ <AppView.FLET_APP: 'flet_app'>
+    │   │          └ <enum 'AppView'>
+    │   └ <function main at 0x7ff2032aa400>
+    └ <function run at 0x7ff203676090>
+
+  File "/home/smn/github/config/.venv/lib/python3.14/site-packages/flet/app.py", line 125, in run
+    return asyncio.run(
+           │       └ <function run at 0x7ff203da54e0>
+           └ <module 'asyncio' from '/home/smn/.local/share/uv/python/cpython-3.14.6-linux-x86_64-gnu/lib/python3.14/asyncio/__init__.py'>
+  File "/home/smn/.local/share/uv/python/cpython-3.14.6-linux-x86_64-gnu/lib/python3.14/asyncio/runners.py", line 205, in run
+    return runner.run(main)
+           │      │   └ <coroutine object run_async at 0x7ff2033c5f40>
+           │      └ <function Runner.run at 0x7ff203da5a60>
+           └ <asyncio.runners.Runner object at 0x7ff20344e510>
+  File "/home/smn/.local/share/uv/python/cpython-3.14.6-linux-x86_64-gnu/lib/python3.14/asyncio/runners.py", line 128, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<run_async() running at /home/smn/github/config/.venv/lib/python3.14/site-packages/flet/app....
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x7ff203da1d20>
+           │    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x7ff20344e510>
+  File "/home/smn/.local/share/uv/python/cpython-3.14.6-linux-x86_64-gnu/lib/python3.14/asyncio/base_events.py", line 706, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7ff203da1c70>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/home/smn/.local/share/uv/python/cpython-3.14.6-linux-x86_64-gnu/lib/python3.14/asyncio/base_events.py", line 677, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7ff203da3d70>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/home/smn/.local/share/uv/python/cpython-3.14.6-linux-x86_64-gnu/lib/python3.14/asyncio/base_events.py", line 2056, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7ff203f83740>
+    └ <Handle <_asyncio.TaskStepMethWrapper object at 0x7ff2031ca500>()>
+  File "/home/smn/.local/share/uv/python/cpython-3.14.6-linux-x86_64-gnu/lib/python3.14/asyncio/events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <_asyncio.TaskStepMethWrapper object at 0x7ff2031ca500>()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <_asyncio.TaskStepMethWrapper object at 0x7ff2031ca500>()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <_asyncio.TaskStepMethWrapper object at 0x7ff2031ca500>()>
+  File "/home/smn/github/config/.venv/lib/python3.14/site-packages/flet/messaging/session.py", line 417, in dispatch_event
+    await control._trigger_event(event_name, event_data)
+          │       │              │           └ None
+          │       │              └ 'click'
+          │       └ <function BaseControl._trigger_event at 0x7ff203b34460>
+          └ FilledButton(_i=5, _c='FilledButton', data=None, key=None, expand=None, expand_loose=False, col=12, opacity=1.0, tooltip=None...
+  File "/home/smn/github/config/.venv/lib/python3.14/site-packages/flet/controls/base_control.py", line 478, in _trigger_event
+    event_handler(e)
+    │             └ Event(name='click', data=None)
+    └ <function save_settings at 0x7ff2032a9f30>
+
+> File "/home/smn/github/config/main.py", line 33, in save_settings
+    write_config(files_all.get('config_file'))
+    │            │         └ <method 'get' of 'dict' objects>
+    │            └ {'files_dir': 'files', 'log_dir': 'log', 'config_file': 'config.ini', 'config_set': 'DEFAULT'}
+    └ <function write_config at 0x7ff2032a9850>
+
+TypeError: write_config() takes 0 positional arguments but 1 was given
+22:03:07 08.07.26 ERROR An error has been caught in function 'save_settings', process 'MainProcess' (4145), thread 'MainThread' (140677434578816):
+Traceback (most recent call last):
+
+  File "/home/smn/github/config/main.py", line 61, in <module>
+    run(main, view=AppView.FLET_APP)
+    │   │          │       └ <AppView.FLET_APP: 'flet_app'>
+    │   │          └ <enum 'AppView'>
+    │   └ <function main at 0x7ff2032aa400>
+    └ <function run at 0x7ff203676090>
+
+  File "/home/smn/github/config/.venv/lib/python3.14/site-packages/flet/app.py", line 125, in run
+    return asyncio.run(
+           │       └ <function run at 0x7ff203da54e0>
+           └ <module 'asyncio' from '/home/smn/.local/share/uv/python/cpython-3.14.6-linux-x86_64-gnu/lib/python3.14/asyncio/__init__.py'>
+  File "/home/smn/.local/share/uv/python/cpython-3.14.6-linux-x86_64-gnu/lib/python3.14/asyncio/runners.py", line 205, in run
+    return runner.run(main)
+           │      │   └ <coroutine object run_async at 0x7ff2033c5f40>
+           │      └ <function Runner.run at 0x7ff203da5a60>
+           └ <asyncio.runners.Runner object at 0x7ff20344e510>
+  File "/home/smn/.local/share/uv/python/cpython-3.14.6-linux-x86_64-gnu/lib/python3.14/asyncio/runners.py", line 128, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<run_async() running at /home/smn/github/config/.venv/lib/python3.14/site-packages/flet/app....
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x7ff203da1d20>
+           │    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x7ff20344e510>
+  File "/home/smn/.local/share/uv/python/cpython-3.14.6-linux-x86_64-gnu/lib/python3.14/asyncio/base_events.py", line 706, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7ff203da1c70>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/home/smn/.local/share/uv/python/cpython-3.14.6-linux-x86_64-gnu/lib/python3.14/asyncio/base_events.py", line 677, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7ff203da3d70>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/home/smn/.local/share/uv/python/cpython-3.14.6-linux-x86_64-gnu/lib/python3.14/asyncio/base_events.py", line 2056, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7ff203f83740>
+    └ <Handle <_asyncio.TaskStepMethWrapper object at 0x7ff2034b5420>()>
+  File "/home/smn/.local/share/uv/python/cpython-3.14.6-linux-x86_64-gnu/lib/python3.14/asyncio/events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <_asyncio.TaskStepMethWrapper object at 0x7ff2034b5420>()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <_asyncio.TaskStepMethWrapper object at 0x7ff2034b5420>()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <_asyncio.TaskStepMethWrapper object at 0x7ff2034b5420>()>
+  File "/home/smn/github/config/.venv/lib/python3.14/site-packages/flet/messaging/session.py", line 417, in dispatch_event
+    await control._trigger_event(event_name, event_data)
+          │       │              │           └ None
+          │       │              └ 'click'
+          │       └ <function BaseControl._trigger_event at 0x7ff203b34460>
+          └ FilledButton(_i=5, _c='FilledButton', data=None, key=None, expand=None, expand_loose=False, col=12, opacity=1.0, tooltip=None...
+  File "/home/smn/github/config/.venv/lib/python3.14/site-packages/flet/controls/base_control.py", line 478, in _trigger_event
+    event_handler(e)
+    │             └ Event(name='click', data=None)
+    └ <function save_settings at 0x7ff2032a9f30>
+
+> File "/home/smn/github/config/main.py", line 33, in save_settings
+    write_config(files_all.get('config_file'))
+    │            │         └ <method 'get' of 'dict' objects>
+    │            └ {'files_dir': 'files', 'log_dir': 'log', 'config_file': 'config.ini', 'config_set': 'DEFAULT'}
+    └ <function write_config at 0x7ff2032a9850>
+
+TypeError: write_config() takes 0 positional arguments but 1 was given
+22:03:07 08.07.26 ERROR An error has been caught in function 'save_settings', process 'MainProcess' (4145), thread 'MainThread' (140677434578816):
+Traceback (most recent call last):
+
+  File "/home/smn/github/config/main.py", line 61, in <module>
+    run(main, view=AppView.FLET_APP)
+    │   │          │       └ <AppView.FLET_APP: 'flet_app'>
+    │   │          └ <enum 'AppView'>
+    │   └ <function main at 0x7ff2032aa400>
+    └ <function run at 0x7ff203676090>
+
+  File "/home/smn/github/config/.venv/lib/python3.14/site-packages/flet/app.py", line 125, in run
+    return asyncio.run(
+           │       └ <function run at 0x7ff203da54e0>
+           └ <module 'asyncio' from '/home/smn/.local/share/uv/python/cpython-3.14.6-linux-x86_64-gnu/lib/python3.14/asyncio/__init__.py'>
+  File "/home/smn/.local/share/uv/python/cpython-3.14.6-linux-x86_64-gnu/lib/python3.14/asyncio/runners.py", line 205, in run
+    return runner.run(main)
+           │      │   └ <coroutine object run_async at 0x7ff2033c5f40>
+           │      └ <function Runner.run at 0x7ff203da5a60>
+           └ <asyncio.runners.Runner object at 0x7ff20344e510>
+  File "/home/smn/.local/share/uv/python/cpython-3.14.6-linux-x86_64-gnu/lib/python3.14/asyncio/runners.py", line 128, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<run_async() running at /home/smn/github/config/.venv/lib/python3.14/site-packages/flet/app....
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x7ff203da1d20>
+           │    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x7ff20344e510>
+  File "/home/smn/.local/share/uv/python/cpython-3.14.6-linux-x86_64-gnu/lib/python3.14/asyncio/base_events.py", line 706, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7ff203da1c70>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/home/smn/.local/share/uv/python/cpython-3.14.6-linux-x86_64-gnu/lib/python3.14/asyncio/base_events.py", line 677, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7ff203da3d70>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/home/smn/.local/share/uv/python/cpython-3.14.6-linux-x86_64-gnu/lib/python3.14/asyncio/base_events.py", line 2056, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7ff203f83740>
+    └ <Handle <_asyncio.TaskStepMethWrapper object at 0x7ff203554160>()>
+  File "/home/smn/.local/share/uv/python/cpython-3.14.6-linux-x86_64-gnu/lib/python3.14/asyncio/events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <_asyncio.TaskStepMethWrapper object at 0x7ff203554160>()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <_asyncio.TaskStepMethWrapper object at 0x7ff203554160>()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <_asyncio.TaskStepMethWrapper object at 0x7ff203554160>()>
+  File "/home/smn/github/config/.venv/lib/python3.14/site-packages/flet/messaging/session.py", line 417, in dispatch_event
+    await control._trigger_event(event_name, event_data)
+          │       │              │           └ None
+          │       │              └ 'click'
+          │       └ <function BaseControl._trigger_event at 0x7ff203b34460>
+          └ FilledButton(_i=5, _c='FilledButton', data=None, key=None, expand=None, expand_loose=False, col=12, opacity=1.0, tooltip=None...
+  File "/home/smn/github/config/.venv/lib/python3.14/site-packages/flet/controls/base_control.py", line 478, in _trigger_event
+    event_handler(e)
+    │             └ Event(name='click', data=None)
+    └ <function save_settings at 0x7ff2032a9f30>
+
+> File "/home/smn/github/config/main.py", line 33, in save_settings
+    write_config(files_all.get('config_file'))
+    │            │         └ <method 'get' of 'dict' objects>
+    │            └ {'files_dir': 'files', 'log_dir': 'log', 'config_file': 'config.ini', 'config_set': 'DEFAULT'}
+    └ <function write_config at 0x7ff2032a9850>
+
+TypeError: write_config() takes 0 positional arguments but 1 was given
+22:03:17 08.07.26 ERROR An error has been caught in function 'save_settings', process 'MainProcess' (4145), thread 'MainThread' (140677434578816):
+Traceback (most recent call last):
+
+  File "/home/smn/github/config/main.py", line 61, in <module>
+    run(main, view=AppView.FLET_APP)
+    │   │          │       └ <AppView.FLET_APP: 'flet_app'>
+    │   │          └ <enum 'AppView'>
+    │   └ <function main at 0x7ff2032aa400>
+    └ <function run at 0x7ff203676090>
+
+  File "/home/smn/github/config/.venv/lib/python3.14/site-packages/flet/app.py", line 125, in run
+    return asyncio.run(
+           │       └ <function run at 0x7ff203da54e0>
+           └ <module 'asyncio' from '/home/smn/.local/share/uv/python/cpython-3.14.6-linux-x86_64-gnu/lib/python3.14/asyncio/__init__.py'>
+  File "/home/smn/.local/share/uv/python/cpython-3.14.6-linux-x86_64-gnu/lib/python3.14/asyncio/runners.py", line 205, in run
+    return runner.run(main)
+           │      │   └ <coroutine object run_async at 0x7ff2033c5f40>
+           │      └ <function Runner.run at 0x7ff203da5a60>
+           └ <asyncio.runners.Runner object at 0x7ff20344e510>
+  File "/home/smn/.local/share/uv/python/cpython-3.14.6-linux-x86_64-gnu/lib/python3.14/asyncio/runners.py", line 128, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<run_async() running at /home/smn/github/config/.venv/lib/python3.14/site-packages/flet/app....
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x7ff203da1d20>
+           │    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x7ff20344e510>
+  File "/home/smn/.local/share/uv/python/cpython-3.14.6-linux-x86_64-gnu/lib/python3.14/asyncio/base_events.py", line 706, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x7ff203da1c70>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/home/smn/.local/share/uv/python/cpython-3.14.6-linux-x86_64-gnu/lib/python3.14/asyncio/base_events.py", line 677, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x7ff203da3d70>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+  File "/home/smn/.local/share/uv/python/cpython-3.14.6-linux-x86_64-gnu/lib/python3.14/asyncio/base_events.py", line 2056, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x7ff203f83740>
+    └ <Handle <_asyncio.TaskStepMethWrapper object at 0x7ff2035d6d70>()>
+  File "/home/smn/.local/share/uv/python/cpython-3.14.6-linux-x86_64-gnu/lib/python3.14/asyncio/events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <_asyncio.TaskStepMethWrapper object at 0x7ff2035d6d70>()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <_asyncio.TaskStepMethWrapper object at 0x7ff2035d6d70>()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <_asyncio.TaskStepMethWrapper object at 0x7ff2035d6d70>()>
+  File "/home/smn/github/config/.venv/lib/python3.14/site-packages/flet/messaging/session.py", line 417, in dispatch_event
+    await control._trigger_event(event_name, event_data)
+          │       │              │           └ None
+          │       │              └ 'click'
+          │       └ <function BaseControl._trigger_event at 0x7ff203b34460>
+          └ FilledButton(_i=5, _c='FilledButton', data=None, key=None, expand=None, expand_loose=False, col=12, opacity=1.0, tooltip=None...
+  File "/home/smn/github/config/.venv/lib/python3.14/site-packages/flet/controls/base_control.py", line 478, in _trigger_event
+    event_handler(e)
+    │             └ Event(name='click', data=None)
+    └ <function save_settings at 0x7ff2032a9f30>
+
+> File "/home/smn/github/config/main.py", line 33, in save_settings
+    write_config(files_all.get('config_file'))
+    │            │         └ <method 'get' of 'dict' objects>
+    │            └ {'files_dir': 'files', 'log_dir': 'log', 'config_file': 'config.ini', 'config_set': 'DEFAULT'}
+    └ <function write_config at 0x7ff2032a9850>
+
+TypeError: write_config() takes 0 positional arguments but 1 was given
