@@ -698,3 +698,66 @@ Traceback (most recent call last):
     └ <function write_config at 0x7ff2032a9850>
 
 TypeError: write_config() takes 0 positional arguments but 1 was given
+11:47:32 15.07.26 ERROR An error has been caught in function 'save_settings', process 'MainProcess' (2316), thread 'MainThread' (2628):
+Traceback (most recent call last):
+
+  File "C:\github\config\main.py", line 61, in <module>
+    run(main, view=AppView.FLET_APP)
+    │   │          │       └ <AppView.FLET_APP: 'flet_app'>
+    │   │          └ <enum 'AppView'>
+    │   └ <function main at 0x0000025CD6B67950>
+    └ <function run at 0x0000025CD69F6AE0>
+
+  File "C:\github\config\.venv\Lib\site-packages\flet\app.py", line 135, in run
+    return asyncio.run(
+           │       └ <function run at 0x0000025CD4633110>
+           └ <module 'asyncio' from 'C:\\Users\\smn\\AppData\\Roaming\\uv\\python\\cpython-3.14.6-windows-x86_64-none\\Lib\\asyncio\\__ini...
+  File "C:\Users\smn\AppData\Roaming\uv\python\cpython-3.14.6-windows-x86_64-none\Lib\asyncio\runners.py", line 205, in run
+    return runner.run(main)
+           │      │   └ <coroutine object run_async at 0x0000025CD6A29640>
+           │      └ <function Runner.run at 0x0000025CD4633690>
+           └ <asyncio.runners.Runner object at 0x0000025CD6B81160>
+  File "C:\Users\smn\AppData\Roaming\uv\python\cpython-3.14.6-windows-x86_64-none\Lib\asyncio\runners.py", line 128, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<run_async() running at C:\github\config\.venv\Lib\site-packages\flet\app.py:318> wait_for=<...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x0000025CD462FA00>
+           │    └ <ProactorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x0000025CD6B81160>
+  File "C:\Users\smn\AppData\Roaming\uv\python\cpython-3.14.6-windows-x86_64-none\Lib\asyncio\base_events.py", line 706, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x0000025CD462F950>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\smn\AppData\Roaming\uv\python\cpython-3.14.6-windows-x86_64-none\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x0000025CD4631B10>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\smn\AppData\Roaming\uv\python\cpython-3.14.6-windows-x86_64-none\Lib\asyncio\base_events.py", line 2056, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x0000025CD43B16F0>
+    └ <Handle <_asyncio.TaskStepMethWrapper object at 0x0000025CD6BA1930>()>
+  File "C:\Users\smn\AppData\Roaming\uv\python\cpython-3.14.6-windows-x86_64-none\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle <_asyncio.TaskStepMethWrapper object at 0x0000025CD6BA1930>()>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle <_asyncio.TaskStepMethWrapper object at 0x0000025CD6BA1930>()>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle <_asyncio.TaskStepMethWrapper object at 0x0000025CD6BA1930>()>
+  File "C:\github\config\.venv\Lib\site-packages\flet\messaging\session.py", line 423, in dispatch_event
+    await control._trigger_event(event_name, event_data)
+          │       │              │           └ None
+          │       │              └ 'click'
+          │       └ <function BaseControl._trigger_event at 0x0000025CD66DD4E0>
+          └ FilledButton(_i=5, _c='FilledButton', data=None, key=None, expand=None, expand_loose=False, col=12, opacity=1.0, tooltip=None...
+  File "C:\github\config\.venv\Lib\site-packages\flet\controls\base_control.py", line 529, in _trigger_event
+    event_handler(e)
+    │             └ Event(name='click', data=None)
+    └ <function save_settings at 0x0000025CD6B67480>
+
+> File "C:\github\config\main.py", line 33, in save_settings
+    write_config(files_all.get('config_file'))
+    │            │         └ <method 'get' of 'dict' objects>
+    │            └ {'files_dir': 'files', 'log_dir': 'log', 'config_file': 'config.ini', 'config_set': 'DEFAULT'}
+    └ <function write_config at 0x0000025CD6B66DA0>
+
+TypeError: write_config() takes 0 positional arguments but 1 was given
