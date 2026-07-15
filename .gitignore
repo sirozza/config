@@ -24,3 +24,4 @@ TestResults.xml
 .__pycache__/
 .log/
 uv.lock
+.venv/
