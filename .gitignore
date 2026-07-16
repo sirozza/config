@@ -22,6 +22,8 @@ rad.json
 #Test results file
 TestResults.xml
 .__pycache__/
-.log/
+log/
 uv.lock
 .venv/
+.python-version
+.flet/
